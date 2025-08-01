@@ -56,7 +56,7 @@ export default function Hero() {
             className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             Building scalable applications across SaaS, AI, and enterprise platforms. 
-            Currently pursuing Master's in Data Science with focus on ML and analytics.
+            Currently pursuing Master&apos;s in Data Science with focus on ML and analytics.
           </motion.p>
 
           <motion.div
