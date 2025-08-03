@@ -19,8 +19,9 @@ export default function Projects() {
       id="projects"
       title="Featured Projects"
       subtitle="Innovative solutions built with modern technologies"
+      className="max-w-7xl mx-auto"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={project.name}
@@ -31,29 +32,54 @@ export default function Projects() {
             className="bg-white rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden shadow-lg group hover:scale-[1.02]"
           >
             {project.image && (
-              <div className="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300">
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-contain p-6"
-                />
+              <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300">
+                {project.image.endsWith('.mp4') ? (
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <video
+                      src={project.image}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      controls
+                      preload="metadata"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      fill
+                      className="absolute inset-0 object-contain p-6"
+                    />
+                  </div>
+                )}
               </div>
             )}
             <div className="p-6">
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                  {project.name}
-                </h3>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 transition-colors"
-                  aria-label={`Visit ${project.name}`}
-                >
-                  <ExternalLink size={20} />
-                </a>
+              <div className="mb-4">
+                <div className="flex items-start justify-between">
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {project.name}
+                  </h3>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-blue-600 transition-colors"
+                    aria-label={`Visit ${project.name}`}
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-gray-500 hover:text-blue-600 transition-colors mt-1 inline-block"
+                  >
+                    {project.link.replace('https://', '')}
+                  </a>
+                )}
               </div>
 
               <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>

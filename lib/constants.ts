@@ -76,8 +76,34 @@ export const education = [
 
 export const projects = [
   {
+    name: "Convers.me",
+    description: "Scheduling app for seamless meeting coordination",
+    highlights: [
+      "Intuitive calendar integration",
+      "Smart scheduling algorithms",
+      "Real-time availability tracking",
+      "Automated reminder system"
+    ],
+    technologies: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"],
+    link: "https://github.com/jasonyu0100/convers.me",
+    image: "/conversme.mp4"
+  },
+  {
+    name: "Astral",
+    description: "Creative brainstorming app for idea generation",
+    highlights: [
+      "AI-powered idea suggestions",
+      "Collaborative brainstorming features",
+      "Mind mapping visualization",
+      "Innovation tracking system"
+    ],
+    technologies: ["TypeScript", "React", "Next.js", "AI/ML", "Node.js"],
+    link: "https://github.com/jasonyu0100/astral",
+    image: "/astral.mp4"
+  },
+  {
     name: "SourceNovel",
-    description: "Generative fiction platform",
+    description: "Generative storytelling platform with integrated media studio",
     highlights: [
       "AI-driven story generation",
       "Interactive narrative experiences",
@@ -97,6 +123,6 @@ export const projects = [
     ],
     technologies: ["React", "Python", "AWS", "PostgreSQL", "AI/ML"],
     link: socialLinks.vidUp,
-    image: "/vidup-logo.jpeg"
+    image: "/vidup.mp4"
   }
 ];
