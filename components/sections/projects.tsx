@@ -31,12 +31,21 @@ export default function Projects() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl border border-gray-200 hover:shadow-xl transition-all duration-300 overflow-hidden shadow-lg group hover:scale-[1.02]"
           >
-            {project.image && (
+            {project.video && (
               <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 group-hover:from-blue-100 group-hover:to-indigo-100 transition-all duration-300">
-                {project.image.endsWith('.mp4') ? (
+                {project.video.includes('youtu') ? (
+                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${project.video.split('/').pop()?.split('?')[0]}`}
+                      className="absolute inset-0 w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : project.video.endsWith('.mp4') ? (
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                     <video
-                      src={project.image}
+                      src={project.video}
                       className="absolute inset-0 w-full h-full object-cover"
                       controls
                       preload="metadata"
@@ -45,7 +54,7 @@ export default function Projects() {
                 ) : (
                   <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                     <Image
-                      src={project.image}
+                      src={project.video}
                       alt={project.name}
                       fill
                       className="absolute inset-0 object-contain p-6"

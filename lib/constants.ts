@@ -86,7 +86,7 @@ export const projects = [
     ],
     technologies: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL"],
     link: "https://github.com/jasonyu0100/convers.me",
-    image: "/conversme.mp4"
+    video: "https://youtu.be/r5q80mnIQKs"
   },
   {
     name: "Astral",
@@ -99,7 +99,7 @@ export const projects = [
     ],
     technologies: ["TypeScript", "React", "Next.js", "AI/ML", "Node.js"],
     link: "https://github.com/jasonyu0100/astral",
-    image: "/astral.mp4"
+    video: "https://youtu.be/jQG-hivh_Lg"
   },
   {
     name: "SourceNovel",
@@ -111,7 +111,7 @@ export const projects = [
     ],
     technologies: ["TypeScript", "React", "Next.js", "Runway", "GPT"],
     link: socialLinks.sourceNovel,
-    image: "/source-novel-icon.png"
+    video: "https://youtu.be/WDT5A4kHEuw?si=MqaLrYvIAUL1KrpW"
   },
   {
     name: "VidUp",
@@ -123,6 +123,6 @@ export const projects = [
     ],
     technologies: ["React", "Python", "AWS", "PostgreSQL", "AI/ML"],
     link: socialLinks.vidUp,
-    image: "/vidup.mp4"
+    video: "https://youtu.be/ybyN8RRJCfs"
   }
 ];
